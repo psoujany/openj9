@@ -58,10 +58,11 @@
 		<if>
 			<equals arg1="${JDK_VERSION}" arg2="8"/>
 			<then>
-				<javac srcdir="${src}" destdir="${build}" debug="true" fork="true" executable="${compiler.javac}" includeAntRuntime="false" encoding="ISO-8859-1">
+				<javac srcdir="${src}" destdir="${build}" debug="true" fork="true" executable="${compiler.javac}" includeAntRuntime="false" >
 					<src path="${src}" />
 					<src path="${src_80}" />
 				</javac>
+				<compilerarg value="-J-Dfile.encoding=IBM-1047" />
 			</then>
 			<else>
 				<if>
@@ -73,7 +74,7 @@
 						<property name="addExports" value='--add-exports java.base/com.ibm.oti.vm=ALL-UNNAMED --add-exports java.base/jdk.internal.reflect=ALL-UNNAMED' />
 					</else>
 				</if>
-				<javac srcdir="${src}" destdir="${build}" source="1.9" target="1.9" debug="true" fork="true" executable="${compiler.javac}" includeAntRuntime="false" encoding="ISO-8859-1">
+				<javac srcdir="${src}" destdir="${build}" source="1.9" target="1.9" debug="true" fork="true" executable="${compiler.javac}" includeAntRuntime="false" >
 					<src path="${src}" />
 					<src path="${src_90}" />
 					<src path="${TestUtilities}" />

@@ -53,12 +53,13 @@ SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-ex
 			<equals arg1="${JDK_VERSION}" arg2="8" />
 			<then>
 				<property name="src_access" location="${TEST_ROOT}/functional/UnsafeAccess/src" />
-				<javac srcdir="${src}" destdir="${build}" debug="true" fork="true" executable="${compiler.javac}" includeAntRuntime="false" encoding="ISO-8859-1">
+				<javac srcdir="${src}" destdir="${build}" debug="true" fork="true" executable="${compiler.javac}" includeAntRuntime="false" >
 					<src path="${src_shared}" />
 					<src path="${src_access}" />
 					<classpath>
 						<pathelement location="${LIB_DIR}/testng.jar" />
 					</classpath>
+					<compilerarg value="-J-Dfile.encoding=IBM-1047" />
 				</javac>
 			</then>
 			<else>
@@ -73,7 +74,7 @@ SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-ex
 						<property name="src_access" location="${TEST_ROOT}/functional/UnsafeAccess/src_170" />
 					</else>
 				</if>
-				<javac srcdir="${src}" destdir="${build}" debug="true" fork="true" executable="${compiler.javac}" includeAntRuntime="false" encoding="ISO-8859-1">
+				<javac srcdir="${src}" destdir="${build}" debug="true" fork="true" executable="${compiler.javac}" includeAntRuntime="false" >
 					<src path="${src_shared}" />
 					<src path="${src_access}" />
 					<classpath>
@@ -81,6 +82,7 @@ SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-ex
 					</classpath>
 					<compilerarg value="--add-exports" />
 					<compilerarg value="java.base/jdk.internal.misc=ALL-UNNAMED" />
+					<compilerarg value="-J-Dfile.encoding=IBM-1047" />
 				</javac>
 			</else>
 		</if>
