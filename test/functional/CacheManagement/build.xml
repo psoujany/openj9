@@ -52,7 +52,7 @@ SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-ex
 		<echo>===destdir:                      ${DEST}</echo>
 		<javac srcdir="testcode" destdir="${testcodebuild}" debug="on" debuglevel="lines,vars,source" executable="${compiler.javac}" includeAntRuntime="false" encoding="ISO-8859-1" />
 		<javac srcdir="testcode" destdir="${build}" debug="on" debuglevel="lines,vars,source" executable="${compiler.javac}" includeAntRuntime="false" encoding="ISO-8859-1" />
-		<javac destdir="${build}" debug="true" fork="true" executable="${compiler.javac}" includeAntRuntime="false" encoding="ISO-8859-1">
+		<javac destdir="${build}" debug="true" fork="true" executable="${compiler.javac}" includeAntRuntime="false" >
 			<src path="${src}" />
 			<classpath>
 				<pathelement location="${LIB_DIR}/junit4.jar" />
