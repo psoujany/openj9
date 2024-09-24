@@ -356,7 +356,7 @@ SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-ex
 			<disable>
 				<comment>https://github.com/eclipse-openj9/openj9/issues/3081</comment>
 				<platform>.*aix.*</platform>
-				<platform>.*zos.*</div>
+				<platform>.*zos.*</platform>
 				<zos></zos>
 			</disable>
 		</disables>
