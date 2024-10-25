@@ -18,6 +18,8 @@
 #
 # SPDX-License-Identifier: EPL-2.0 OR Apache-2.0 OR GPL-2.0-only WITH Classpath-exception-2.0 OR GPL-2.0-only WITH OpenJDK-assembly-exception-1.0
 
+*.xml git-encoding=UTF-8 working-tree-encoding=UTF-8
+
 # Binary files
 *.blob binary
 *.gif binary
